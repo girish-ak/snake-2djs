@@ -61,9 +61,8 @@ function gameEngine() {
 	if (snakearr[0].y === food.y && snakearr[0].x === food.x) {
 		foodSound.play();
 		score += 1;
-		counter +=1;
-		if (counter === 7)
-		{
+		counter += 1;
+		if (counter === 7) {
 			speed += 2;
 			counter = 0;
 		}
@@ -116,7 +115,7 @@ function gameEngine() {
 //main logic
 bgmusic.play();
 let hiscore = localStorage.getItem("hiscore");
-if (hiscore === "[object JSON]") {
+if (hiscore === null) {
 	hiscoreval = 0;
 	localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
 }
