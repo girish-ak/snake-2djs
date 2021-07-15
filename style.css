@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney&display=swap');
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+.body{
+	background-color: #073B4C;
+	min-height: 96.25vh;
+	background-size: 100vw 100vh;
+	display: flex;
+	justify-content: flex-start;
+	align-content: center;
+	padding-top: 25px;
+	padding-left: 80px;
+}
+
+h1{
+	position:absolute;
+	right:35px;
+	top : 40px;
+	font-size: 80px;
+	font-family: 'Tourney',cursive;
+	color:#06d6a0;
+}
+
+#highscore{
+	position:absolute;
+	top : 240px;
+	right : 30px;
+	font-size: 38px;
+	color: #EF476F;
+	font-family: 'Tourney', cursive;
+
+}
+
+#board{
+	width : 140vmin;
+	height: 90vmin;
+	border: 6px solid #118AB2 ;
+	outline:  5px solid #06d6a0;
+	display: grid;
+	grid-template-columns: repeat(23, 1fr);
+	grid-template-rows: repeat(15, 1fr);
+}
+
+#scorebox{
+	position:absolute;
+	top : 180px;
+	right : 80px;
+	font-size: 38px;
+	color: #FFD166;
+	font-family: 'Tourney', cursive;
+}
+
+.head{
+	background-color: #06d6a0;
+	border : 2px solid white;
+	border-radius: 20px;
+	transform: scale(1.05);
+}
+
+.food{
+	background-color: #FFD166;
+	border-radius: 24px;
+	transform: scale(0.7);
+}
+
+.snake{
+	background-color: #118AB2;
+	border: 2px solid #06d6a0;
+	border-radius: 24px;
+	transform: scale(0.92);
+}
+/*#FF3EA5FF*/
+/* #8BE8CB */
