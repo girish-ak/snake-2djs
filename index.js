@@ -31,14 +31,17 @@ function isColloide(sarr) {
 	//self-collision
 	for (let i = 1; i < sarr.length; i++) {
 		if (sarr[i].x === sarr[0].x && sarr[i].y === sarr[0].y) {
+			gameOverSound.play();
 			return true;
 		}
 	}
 	//wall collison
 	if (sarr[0].x >= 23 || sarr[0].x <= 0) {
+		gameOverSound.play();
 		return true;
 	}
 	else if (sarr[0].y >= 15 || sarr[0].y <= 0) {
+		gameOverSound.play();
 		return true;
 	}
 	else
@@ -48,7 +51,6 @@ function isColloide(sarr) {
 function gameEngine() {
 	// phase 1 - updating snake co-ordinates.
 	if (isColloide(snakearr)) {
-		gameOverSound.play();
 		bgmusic.pause();
 		inputDir = { x: 0, y: 0 };
 		alert("Game Over!!. Press any key to restart! ");
