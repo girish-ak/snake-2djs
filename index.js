@@ -4,7 +4,7 @@ const foodSound = new Audio('sounds/chew.wav');
 const gameOverSound = new Audio('sounds/game-over.wav');
 const movementSound = new Audio('sounds/turn.wav');
 const bgmusic = new Audio('sounds/bg.mp3');
-bgmusic.volume = 0.2;
+bgmusic.volume = 0.18;
 movementSound.volume = 0.3;
 gameOverSound.volume = 0.35;
 foodSound.volume = 0.5;
@@ -55,6 +55,7 @@ function gameEngine() {
 		snakearr = [{ x: 10, y: 11 }];
 		bgmusic.play();
 		score = 0;
+		speed = 5;
 
 	}
 	//if snake eats food incrementing body and regeration of food
@@ -113,7 +114,7 @@ function gameEngine() {
 
 
 //main logic
-bgmusic.play();
+
 let hiscore = localStorage.getItem("hiscore");
 if (hiscore === null) {
 	hiscoreval = 0;
@@ -124,6 +125,7 @@ else {
 	highscore.innerHTML = "High Score : " + hiscore;
 }
 window.requestAnimationFrame(main);
+bgmusic.play();
 window.addEventListener('keydown', e => {
 	inputDir = { x: 0, y: 1 } //game starts
 	movementSound.play();
