@@ -35,6 +35,7 @@ function isColloide(sarr) {
 			return true;
 		}
 	}
+
 	//wall collison
 	if (sarr[0].x >= 23 || sarr[0].x <= 0) {
 		gameOverSound.play();
@@ -83,6 +84,7 @@ function gameEngine() {
 		food = { x: Math.round(a + (b - a) * Math.random()), y: Math.round(c + (d - c) * Math.random()) };
 	}
 	//moving snake
+
 	for (let i = snakearr.length - 2; i >= 0; i--) {
 		snakearr[i + 1] = { ...snakearr[i] };
 	}
@@ -116,7 +118,6 @@ function gameEngine() {
 
 
 //main logic
-
 let hiscore = localStorage.getItem("hiscore");
 if (hiscore === null) {
 	hiscoreval = 0;
@@ -127,10 +128,11 @@ else {
 	highscore.innerHTML = "High Score : " + hiscore;
 }
 window.requestAnimationFrame(main);
-bgmusic.play();
+
 window.addEventListener('keydown', e => {
 	inputDir = { x: 0, y: 1 } //game starts
 	movementSound.play();
+	bgmusic.play();
 	switch (e.key) {
 		case "ArrowUp":
 			console.log("ArrowUp")
