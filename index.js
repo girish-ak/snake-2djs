@@ -70,10 +70,10 @@ function gameEngine() {
 			speed += 2;
 			counter = 0;
 		}
-		if (score > hiscoreval) {
-			hiscoreval = score;
-			localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
-			highscore.innerHTML = "High Score :" + hiscoreval;
+		if (score > hvalue) {
+			hvalue = score;
+			localStorage.setItem("hscore", JSON.stringify(hvalue));
+			highscore.innerHTML = "High Score :" + hvalue;
 		}
 		scorebox.innerHTML = "Score : " + score;
 		snakearr.unshift({ x: snakearr[0].x + inputDir.x, y: snakearr[0].y + inputDir.y });
@@ -118,14 +118,15 @@ function gameEngine() {
 
 
 //main logic
-let hiscore = localStorage.getItem("hiscore");
-if (hiscore === null) {
-	hiscoreval = 0;
-	localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
+let hscore = localStorage.getItem("hscore");
+if (hscore === null) {
+	hvalue = 0;
+	highscore.innerHTML = "High Score : " + hscore;
+	localStorage.setItem("hscore", JSON.stringify(hvalue))
 }
 else {
-	hiscoreval = JSON.parse(hiscore);
-	highscore.innerHTML = "High Score : " + hiscore;
+	hvalue = JSON.parse(hscore);
+	highscore.innerHTML = "High Score : " + hscore;
 }
 window.requestAnimationFrame(main);
 

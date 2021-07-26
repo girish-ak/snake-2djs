@@ -8,6 +8,7 @@
 
 
 .body{
+	height: fixed;
 	background-color: #073B4C;
 	min-height: 96.25vh;
 	background-size: 100vw 100vh;
